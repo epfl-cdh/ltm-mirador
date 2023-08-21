@@ -1,13 +1,32 @@
 import Mirador from 'mirador/dist/es/src/index';
 import { miradorImageToolsPlugin } from 'mirador-image-tools';
+import {
+  miradorAnnotationPlugin,
+  externalStorageAnnotationPlugin,
+  canvasAnnotationsPlugin,
+  annotationCreationCompanionWindow,
+  windowSideBarButtonsPlugin,
+}
+from 'mirador-annotations';
+import LocalStorageAdapter from 'mirador-annotations/lib/LocalStorageAdapter';
 
 
 const config = {
   id: 'viewer',
-  windows: [{
+  // annotation: {
+  //   adapter: (canvasId) => new LocalStorageAdapter(`localStorage://?canvasId=${canvasId}`),
+  //   // adapter: (canvasId) => new AnnototAdapter(canvasId, endpointUrl),
+  //   exportLocalStorageAnnotations: false, // display annotation JSON export button
+  // },
+  window: {
+    // defaultSideBarPanel: 'annotations',
+    sideBarOpenByDefault: true,
+  },
+  windows: [
+  {
     imageToolsEnabled: true,
     imageToolsOpen: true,
-    manifestId: 'https://purl.stanford.edu/sn904cj3429/iiif/manifest',
+    manifestId: 'http://cdhvm0003.xaas.epfl.ch/web/manifests/1832_RC-106-010.json'
   }],
   theme: {
     palette: {
@@ -15,9 +34,14 @@ const config = {
         main: '#1967d2',
       },
     },
-  },
+  }
 };
 
 Mirador.viewer(config, [
   ...miradorImageToolsPlugin,
+  // miradorAnnotationPlugin,
+  // externalStorageAnnotationPlugin,
+  // canvasAnnotationsPlugin,
+  // annotationCreationCompanionWindow,
+  windowSideBarButtonsPlugin
 ]);
