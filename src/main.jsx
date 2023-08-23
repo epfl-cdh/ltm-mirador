@@ -1,14 +1,14 @@
 import Mirador from 'mirador/dist/es/src/index';
 import { miradorImageToolsPlugin } from 'mirador-image-tools';
-import {
-  miradorAnnotationPlugin,
-  externalStorageAnnotationPlugin,
-  canvasAnnotationsPlugin,
-  annotationCreationCompanionWindow,
-  windowSideBarButtonsPlugin,
-}
-from 'mirador-annotations';
-import LocalStorageAdapter from 'mirador-annotations/lib/LocalStorageAdapter';
+// import {
+//   miradorAnnotationPlugin,
+//   externalStorageAnnotationPlugin,
+//   canvasAnnotationsPlugin,
+//   annotationCreationCompanionWindow,
+//   windowSideBarButtonsPlugin,
+// }
+// from 'mirador-annotations';
+// import LocalStorageAdapter from 'mirador-annotations/lib/LocalStorageAdapter';
 
 
 const config = {
@@ -16,7 +16,7 @@ const config = {
   // annotation: {
   //   adapter: (canvasId) => new LocalStorageAdapter(`localStorage://?canvasId=${canvasId}`),
   //   // adapter: (canvasId) => new AnnototAdapter(canvasId, endpointUrl),
-  //   exportLocalStorageAnnotations: false, // display annotation JSON export button
+  //   exportLocalStorageAnnotations: true, // display annotation JSON export button
   // },
   window: {
     // defaultSideBarPanel: 'annotations',
@@ -25,7 +25,7 @@ const config = {
   windows: [
   {
     imageToolsEnabled: true,
-    imageToolsOpen: true,
+    imageToolsOpen: false,
     manifestId: 'http://cdhvm0003.xaas.epfl.ch/web/manifests/1832_RC-106-010.json'
   }],
   theme: {
@@ -43,5 +43,5 @@ Mirador.viewer(config, [
   // externalStorageAnnotationPlugin,
   // canvasAnnotationsPlugin,
   // annotationCreationCompanionWindow,
-  windowSideBarButtonsPlugin
+  // windowSideBarButtonsPlugin
 ]);
