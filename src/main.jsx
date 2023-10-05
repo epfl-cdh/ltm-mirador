@@ -100,7 +100,7 @@ const config = {
   {
     imageToolsEnabled: true,
     imageToolsOpen: false,
-    manifestId: 'http://cdhvm0003.xaas.epfl.ch/web/manifests/1832_RC-106-010.json'
+    manifestId: 'https://cdhvm0003.xaas.epfl.ch/web/manifests/1832_RC-106-010.json'
   }],
   theme: {
     palette: {
